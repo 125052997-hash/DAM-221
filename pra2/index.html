@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería - Proyecto</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; color: #222; }
+        .nav { margin-bottom: 20px; }
+        .nav button { padding: 8px 16px; margin-right: 5px; cursor: pointer; }
+        .nav button.active { font-weight: bold; background-color: #ddd; }
+        .vista { display: none; }
+        .vista.active { display: block; }
+        .panel { border: 1px solid #aaa; padding: 15px; border-radius: 4px; max-width: 500px; }
+        input { padding: 6px; margin: 5px 0; width: 95%; display: block; }
+        button { padding: 6px 12px; cursor: pointer; margin-top: 5px; }
+        ul { list-style: none; padding: 0; }
+        li { border-bottom: 1px solid #eee; padding: 6px 0; }
+        .producto { border: 1px solid #ccc; padding: 10px; margin: 5px 0; cursor: pointer; border-radius: 4px; }
+        .producto:hover { background: #f9f9f9; }
+        .producto-item { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; padding: 6px 0; }
+        .total { font-weight: bold; margin-top: 15px; font-size: 16px; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+        .modal-content { background: #fff; padding: 20px; margin: 100px auto; width: 280px; text-align: center; border-radius: 6px; }
+    </style>
+</head>
+<body>
+
+    <h1>Sistema Cafetería</h1>
+
+    <!-- Pestañas -->
+    <div class="nav">
+        <button class="active" onclick="cambiarVista('cocina', this)">Cocina</button>
+        <button onclick="cambiarVista('cliente', this)">Cliente</button>
+        <button onclick="cambiarVista('caja', this)">Caja</button>
+    </div>
+
+    <!-- 02. VISTA COCINA -->
+    <div id="vista-cocina" class="vista active">
+        <div class="panel">
+            <h2>Cocina - Gestión de Productos</h2>
+            <h3>Agregar Producto</h3>
+            <input type="text" id="crudNombre" placeholder="Nombre del producto">
+            <input type="number" id="crudPrecio" placeholder="Precio ($)">
+            <button onclick="agregarProducto()">Guardar en Catálogo</button>
+
+            <h3>Catálogo de Productos</h3>
+            <div id="listaProductosCrud"></div>
+        </div>
+    </div>
+
+    <!-- 03. VISTA CLIENTE -->
+    <div id="vista-cliente" class="vista">
+        <div class="panel">
+            <h2>Cliente - Menú de Pedidos</h2>
+            <div id="gridProductosCliente"></div>
+
+            <h3>Tu Pedido</h3>
+            <div id="listaCliente"></div>
+            <div class="total">Subtotal: $<span id="totalCliente">0.00</span></div>
+            <button onclick="confirmarOrdenCliente()">Confirmar Pedido</button>
+        </div>
+    </div>
+
+    <!-- 01. VISTA CAJA (TU PARTE) -->
+    <div id="vista-caja" class="vista">
+        <div class="panel">
+            <h2>Caja Registradora</h2>
+            <h3>Cobro Directo en Mostrador</h3>
+            <input type="text" id="producto" placeholder="Nombre del producto extra">
+            <input type="number" id="precio" placeholder="Precio ($)" step="0.50">
+            <button onclick="agregarPedido()">Añadir al Ticket</button>
+
+            <h3>Ticket / Comandas Pendientes</h3>
+            <div id="listaActual"></div>
+            <div class="total">Total Acumulado: $<span id="totalActual">0.00</span></div>
+            <button onclick="cerrarVenta()">Cobrar Ticket</button>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación para el cliente -->
+    <div class="modal" id="modalTicket">
+        <div class="modal-content">
+            <h3>¡Pedido Recibido!</h3>
+            <p>Tu folio es:</p>
+            <h2 id="numeroTicket">#001</h2>
+            <button onclick="cerrarModalCliente()">Aceptar</button>
+        </div>
+    </div>
+
+    <!-- Scripts en orden -->
+    <script src="cocina.js"></script>
+    <script src="cliente.js"></script>
+    <script src="caja.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
