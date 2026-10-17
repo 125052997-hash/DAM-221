@@ -3,7 +3,7 @@ export const Saludo2=()=>{
   return (
   <View>  
     <Text>Hola RN: soy un componente Propio compuesto</Text>
-  <Image source={require('../assets/palabrota.jpg')} ></Image>
+  <Image source={require('../assets/wave.png')} ></Image>
   <Button title='presiona para saludar'/>
   </View>
   )
