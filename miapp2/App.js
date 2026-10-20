@@ -29,9 +29,9 @@ export default function App() {
 
       <Text>---------------------------------------------</Text> */}
        
-      <Perfil nombre="Jose" carrera="ITIID" materia="Aplicaciones Moviles" cuatri="4"/>
-      <Perfil nombre="Erick" carrera="ITIID" materia="Aplicaciones Moviles" cuatri="4"/>
-      <Perfil nombre="Alvaro" carrera="ITIID" materia="Aplicaciones Moviles" cuatri="4"/>
+      <Perfil style={styles.tarjeta1} nombre="Jose" carrera="ITIID" materia="Aplicaciones Moviles" cuatri="4"/>
+      <Perfil style={styles.tarjeta2} nombre="Erick" carrera="ITIID" materia="Aplicaciones Moviles" cuatri="4"/>
+      <Perfil style={styles.tarjeta3} nombre="Alvaro" carrera="ITIID" materia="Aplicaciones Moviles" cuatri="4"/>
 
 
       <StatusBar style="auto" />
@@ -39,11 +39,17 @@ export default function App() {
   );
 }
 /**3. zona de estilos/ */
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const styles= StyleSheet.create({
+  container:{
+    flex:1,
+    backgroundColor:'#fffbfb',
+
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center',
   },
+
+  tarjetas1:{backgroundColor:'#ffffff'},
+  tarjeta2:{backgroundColor:'#6d0cdc'},
+  tarjeta3:{backgroundColor:'#831283'},
 });
