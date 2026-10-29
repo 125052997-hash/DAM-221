@@ -4,7 +4,7 @@ import { useState } from 'react';
 import  TarjetasScreen from './TarjetasScreen';
 import  SafeScreen  from './SafeScreen';
 import ScrollScreen from './ScrollScreen';
-import Pressable from './Pressable';
+import PressableScreen from './PressableScreen';
 import TextImput from './TextImput';
 import  FlatList  from './FlatList';
 import ImageScreen from './ImageScreen';
@@ -25,7 +25,7 @@ export default function MenuScreen() {
     case 'scroll':
       return <ScrollScreen/>
     case  'Press':
-      return <Pressable/>
+      return <PressableScreen/>
     case 'Text':
       return <TextImput/>
     case 'Flat':
