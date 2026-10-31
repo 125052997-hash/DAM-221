@@ -5,7 +5,7 @@ import  TarjetasScreen from './TarjetasScreen';
 import  SafeScreen  from './SafeScreen';
 import ScrollScreen from './ScrollScreen';
 import PressableScreen from './PressableScreen';
-import TextImput from './TextImput';
+import TextImputScreen from './TextInputScreen';
 import  FlatList  from './FlatList';
 import ImageScreen from './ImageScreen';
 import Modal from './Modal';
@@ -27,7 +27,7 @@ export default function MenuScreen() {
     case  'Press':
       return <PressableScreen/>
     case 'Text':
-      return <TextImput/>
+      return <TextImputScreen/>
     case 'Flat':
       return <FlatList/>
     case 'image':
