@@ -39,7 +39,7 @@ export default function SafeScreen() {
       <View style={styles.reproductor}>
         <Text style={styles.texto}>LISTA DE SONGS</Text>
         <Text>LAS MAS TOPS</Text>
-      </View>
+      </View> 
 
       <Text style={styles.subtitulo}>
         Canciones disponibles

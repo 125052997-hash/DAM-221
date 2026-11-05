@@ -3,10 +3,9 @@ import { StatusBar, View, Text, Button, StyleSheet } from 'react-native';
 import { useState } from 'react';
 import  TarjetasScreen from './TarjetasScreen';
 import  SafeScreen  from './SafeScreen';
-import ScrollScreen from './ScrollScreen';
 import PressableScreen from './PressableScreen';
 import TextImputScreen from './TextInputScreen';
-import  FlatList  from './FlatList';
+import  FlatListScreen  from './FlatListScreen';
 import ImageScreen from './ImageScreen';
 import Modal from './Modal';
 import ActivityIndicator from './ActivityIndicator';
@@ -22,14 +21,12 @@ export default function MenuScreen() {
       return <TarjetasScreen />;
     case 'safe':
       return <SafeScreen />;
-    case 'scroll':
-      return <ScrollScreen/>
     case  'Press':
       return <PressableScreen/>
     case 'Text':
       return <TextImputScreen/>
     case 'Flat':
-      return <FlatList/>
+      return <FlatListScreen/>
     case 'image':
       return <ImageScreen/>
     case 'modal':
@@ -45,7 +42,6 @@ export default function MenuScreen() {
                 <Text>Menú de prácticas</Text>
                 <Button title="Pract:tarjetas" onPress={()=> setScreen('tarjetas')}> </Button>
                 <Button title="Pract:SafeAreaView" onPress={()=> setScreen('safe')}> </Button>
-                <Button title="Pract:ScrollScreen" onPress={()=> setScreen('scroll')}> </Button>
                 <Button title="Pract:Pressable" onPress={()=> setScreen('Press')}></Button>
                 <Button title="Pract:TextImput" onPress={()=> setScreen('Text')}> </Button>
                 <Button title="Pract:FlatList" onPress={()=> setScreen('Flat')}> </Button>
