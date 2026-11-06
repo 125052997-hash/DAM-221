@@ -6,7 +6,7 @@ import  SafeScreen  from './SafeScreen';
 import PressableScreen from './PressableScreen';
 import TextImputScreen from './TextInputScreen';
 import  FlatListScreen  from './FlatListScreen';
-import ImageScreen from './ImageScreen';
+import SplashScreen from './SplashScreen';
 import Modal from './Modal';
 import ActivityIndicator from './ActivityIndicator';
 import KeyboardScreen from './KeyboardScreen';
@@ -27,8 +27,8 @@ export default function MenuScreen() {
       return <TextImputScreen/>
     case 'Flat':
       return <FlatListScreen/>
-    case 'image':
-      return <ImageScreen/>
+    case 'splash':
+      return <SplashScreen/>
     case 'modal':
       return <Modal/>
     case 'indicator':
@@ -45,7 +45,7 @@ export default function MenuScreen() {
                 <Button title="Pract:Pressable" onPress={()=> setScreen('Press')}></Button>
                 <Button title="Pract:TextImput" onPress={()=> setScreen('Text')}> </Button>
                 <Button title="Pract:FlatList" onPress={()=> setScreen('Flat')}> </Button>
-                <Button title="Pract:ImagineBackground" onPress={()=> setScreen('image')}> </Button>
+                <Button title="Pract:SplashScreen" onPress={()=> setScreen('splash')}> </Button>
                 <Button title="Pract:Modal" onPress={()=> setScreen('modal')}> </Button>
                 <Button title="Pract:ActivityIndicator" onPress={()=> setScreen('indicator')}> </Button>
                 <Button title="Pract:Keyboard" onPress={()=> setScreen('key')}> </Button>
