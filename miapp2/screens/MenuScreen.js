@@ -8,8 +8,7 @@ import TextImputScreen from './TextInputScreen';
 import  FlatListScreen  from './FlatListScreen';
 import SplashScreen from './SplashScreen';
 import Modal from './Modal';
-import ActivityIndicator from './ActivityIndicator';
-import KeyboardScreen from './KeyboardScreen';
+import Practica from './Practica';
 
 /*
 2.zona Render o Main
@@ -32,9 +31,7 @@ export default function MenuScreen() {
     case 'modal':
       return <Modal/>
     case 'indicator':
-      return <ActivityIndicator/>
-    case 'key':
-      return <KeyboardScreen/>
+      return <Practica/>
     case 'menu':
         default:
             return (
@@ -48,8 +45,6 @@ export default function MenuScreen() {
                 <Button title="Pract:SplashScreen" onPress={()=> setScreen('splash')}> </Button>
                 <Button title="Pract:Modal" onPress={()=> setScreen('modal')}> </Button>
                 <Button title="Pract:ActivityIndicator" onPress={()=> setScreen('indicator')}> </Button>
-                <Button title="Pract:Keyboard" onPress={()=> setScreen('key')}> </Button>
-
             </View>
             );
 }
